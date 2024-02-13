@@ -52,4 +52,7 @@ function getSelectedOption() {
     }
 };
 
+document.getElementById('insta').addEventListener('click', function() {
+  window.open('https://www.instagram.com/frahmannnn/', '_blank');
+});
 
