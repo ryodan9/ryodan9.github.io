@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" href="style.css"> 
+  <title>Instagram</title> 
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet"> 
+  <link rel="stylesheet" href="main.css"> 
+ </head> 
+ <body> 
+  <section id="choose"> 
+   <header> 
+    <img src="profile.jpg" alt="profile image"> 
+    <div> 
+     <p>frahmannnn</p> <i class="ri-verified-badge-fill"></i> 
+    </div> 
+   </header> 
+   <div class="card"> 
+    <div id="carousel" class="visual"> 
+     <img id="card1" src="left.jpg" alt="Good"> 
+     <img id="card2" src="mid.png" alt="Good"> 
+     <img id="card3" src="right.jpg" alt="Good">
+     <div class="controls"> <button id="prev" class="previous" onclick="carousel.scrollBy(-100, 0)"> <i class="ri-arrow-left-circle-fill"></i> </button> <button id="next" class="next" onclick="carousel.scrollBy(100, 0)"> <i class="ri-arrow-right-circle-fill"></i> </button> 
+     </div> 
+     <div id="pagination" class="pagination"></div> 
+    </div> 
+   </div> 
+   <div class="social"> 
+    <div class="inter"> 
+     <div> <button onclick="changeColor()"> <i class="ri-heart-line" id="heartIcon"></i> </button> <button> <i class="ri-chat-3-line" id="commentIcon"></i> </button> <button type="button" class="btn" onclick="shareClicked()">
+        <i class="ri-share-line" id="shareIcon"></i>
+      </button> 
+     </div> <button> <i class="ri-bookmark-line"></i> </button> 
+    </div> 
+    <p>1M likes</p> 
+    <p>Jalan yuk, click gambarnya</p> 
+   </div> 
+  </section>
+
+  <!-- another section -->
+  <section id="share-section" class="hide-section">
+    <label for="shareDate">Waktu kosong:</label>
+    <input type="date" id="shareDate" class="form-control mb-4">
+    <div>
+       <input type="radio" id="option1" name="options" value="1">
+       <label for="option1">Kopi Nako</label>
+    </div>
+    <div>
+       <input type="radio" id="option2" name="options" value="2">
+       <label for="option2">Shabu Hachi</label>
+    </div>
+    <div class="mb-4">
+       <input type="radio" id="option3" name="options" value="3">
+       <label for="option3">Dua-duanya</label>
+    </div>
+    <a id="sendMessageLink" href="#" target="_blank">Send Message</a>
+ </section>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="main.js"></script> 
+  <script>
+    document.getElementById('card3').addEventListener('click', function() {
+        window.open('https://maps.app.goo.gl/XMtESK3nw587xPyx6', '_blank');
+    });
+
+    document.getElementById('card1').addEventListener('click', function() {
+        window.open('https://maps.app.goo.gl/QuuNAdkRSDytXm2W8', '_blank');
+    });
+
+    function changeColor() {
+        var heartIcon = document.getElementById('heartIcon');
+        heartIcon.classList.toggle('red-heart');
+    };
+
+    document.getElementById('commentIcon').addEventListener('click', function() {
+        alert('gabisa comment :p');
+    });
+
+    function shareClicked() {
+    // Mengatur waktu penundaan sebelum mengubah gaya elemen
+    setTimeout(function() {
+        // Menambahkan kelas CSS untuk menyembunyikan section pertama
+        document.getElementById('choose').classList.add('hide-section-animation');
+    }, 200); // Mengatur penundaan selama 100 milidetik
+
+    setTimeout(function() {
+        document.getElementById('choose').classList.add('hide-section');
+        document.getElementById('share-section').classList.remove('hide-section');
+    }, 500);
+    };
+
+
+  </script>
+ </body>
+</html>
